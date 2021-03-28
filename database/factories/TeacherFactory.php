@@ -27,7 +27,7 @@ class TeacherFactory extends Factory
             'middlenames' => $this->faker->firstName,
             'lastname' => $this->faker->lastName,
             'sex' => $this->faker->randomElement($array = array ('M','F')),
-            'email' => $this->faker->safeEmail,
+            'email' => $this->faker->unique()->safeEmail,
             'mobile' => $this->faker->phoneNumber,
             'address' => $this->faker->address,
         ];

@@ -17,7 +17,8 @@ class CreateSubjectsTable extends Migration
             $table->id();
             $table->string('subject_code');
             $table->string('subject');
-            $table->string('form_id')->nullable();//for now is nullable
+            $table->foreignId('form_id')->references('id')->on('forms');
+            $table->foreignId('subject_state_id')->references('id')->on('subject_states');
             //$table->string('subject');
             $table->timestamps();
         });

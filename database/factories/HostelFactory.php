@@ -22,7 +22,10 @@ class HostelFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'hostel' => $this->faker->unique()->randomElement($array = array ('Mhofu','Chaminuka','Nehanda','Shumba','Helmo','Mutapa','Soko','Senior Block','Cottage','N-Block','F-Block','G-Block','I-Block','A-Block')),
+            'description' => $this->faker->sentence(10, false),
+            'capacity' => $this->faker->numberBetween(40, 100),
+            'sex' => $this->faker->randomElement($array = array ('M','F')),
         ];
     }
 }

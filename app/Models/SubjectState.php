@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hostel extends Model
+class SubjectState extends Model
 {
     use HasFactory;
 
-    public function students()
+    public function subjects()
     {
-        return $this->hasMany('App\Models\Student');
+        $this->hasMany('App\Models\SUbject');
     }
 }

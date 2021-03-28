@@ -24,6 +24,8 @@ class CreateStudentsTable extends Migration
             $table->string('mobile');
             $table->string('address');
             $table->foreignId('classroom_id')->references('id')->on('classrooms');
+            $table->foreignId('student_type_id')->references('id')->on('student_types');
+            $table->foreignId('hostel_id')->references('id')->on('hostels');
             //$table->string('password');
             //$table->string('created_by');
             //$table->string('authorised_by');

@@ -22,7 +22,14 @@ class StaffFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'staff_id' => $this->faker->unique()->numberBetween(3000, 5000),
+            'firstname' => $this->faker->firstName,
+            'middlenames' => $this->faker->firstName,
+            'lastname' => $this->faker->lastName,
+            'sex' => $this->faker->randomElement($array = array ('M','F')),
+            'email' => $this->faker->unique()->safeEmail,
+            'mobile' => $this->faker->phoneNumber,
+            'address' => $this->faker->address,
         ];
     }
 }

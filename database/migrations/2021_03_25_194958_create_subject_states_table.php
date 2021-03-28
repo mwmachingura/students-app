@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClassroomsTable extends Migration
+class CreateSubjectStatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateClassroomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('classrooms', function (Blueprint $table) {
+        Schema::create('subject_states', function (Blueprint $table) {
             $table->id();
-            $table->string('class');
-            $table->foreignId('form_id')->references('id')->on('forms');
+            $table->string('state');
             $table->string('description');
-            //$table->string('rating');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateClassroomsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('classrooms');
+        Schema::dropIfExists('subject_states');
     }
 }

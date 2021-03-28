@@ -14,6 +14,11 @@ class Classroom extends Model
         return $this->belongsToMany('App\Models\Teacher');
     }
 
+    public function form()
+    {
+        return $this->belongsTo('App\Models\Form');
+    }
+
     public function students()
     {
         return $this->hasMany('App\Models\Student');

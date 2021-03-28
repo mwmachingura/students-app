@@ -22,7 +22,10 @@ class BankFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'bank' => $this->faker->randomElement($array =  array ('FBC Bank','Stanbic Bank','ZB Bank')),
+            'branch' => $this->faker->city,
+            'branch_code' => strtoupper($this->faker->unique()->bothify('###')),
+            'account_number' => $this->faker->bankAccountNumber,
         ];
     }
 }
